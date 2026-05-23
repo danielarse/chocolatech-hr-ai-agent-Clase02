@@ -14,9 +14,9 @@ Todo dentro de un único flujo orquestado mediante n8n.
 
 # ⚙️ Componentes del Workflow
 
-## 💬 Telegram Trigger
+## 💬 When Chat Message Received
 
-Recibe mensajes desde Telegram.
+Nodo trigger conversacional encargado de iniciar el workflow cuando el usuario interactúa mediante el chat integrado de n8n.
 
 ---
 
@@ -54,33 +54,16 @@ Permite recuperación semántica mediante embeddings.
 
 ---
 
-## 📤 Send Message
-
-Envía respuestas nuevamente al usuario en Telegram.
-
----
-
 # 🔄 Flujo General
 
 ```text
-Telegram Trigger
-    ↓
+When Chat Message Received
+        ↓
 Agente Inteligente RRHH
     ├── Cohere
     ├── PostgreSQL Memory
     ├── MySQL Retrieval
     └── Knowledge Base
-    ↓
-Telegram Response
+        ↓
+Respuesta Conversacional
 ```
-
----
-
-# 🚀 Características
-
-- arquitectura modular
-- integración multi-servicio
-- recuperación híbrida
-- automatización empresarial
-- IA conversacional
-- persistencia contextual

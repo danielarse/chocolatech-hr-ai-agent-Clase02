@@ -1,6 +1,6 @@
 # 🤖 ChocolaTECH HR AI Agent - Clase02
 
-Agente IA híbrido para Recursos Humanos construido mediante automatización con n8n, integración con Telegram, memoria conversacional persistente, consultas SQL y arquitectura RAG.
+Agente IA híbrido para Recursos Humanos construido mediante automatización con n8n, memoria conversacional persistente, consultas SQL y arquitectura RAG.
 
 ---
 
@@ -16,7 +16,7 @@ El proyecto implementa una arquitectura híbrida capaz de combinar:
 - ⚙️ Automatización mediante n8n
 - ☁️ Infraestructura cloud en Railway
 
-El agente interactúa con usuarios a través de Telegram y puede responder preguntas utilizando tanto información estructurada (SQL) como conocimiento contextual y conversacional.
+El agente interactúa mediante el chat integrado de n8n y puede responder preguntas utilizando tanto información estructurada (SQL) como conocimiento contextual y conversacional.
 
 ---
 
@@ -25,17 +25,17 @@ El agente interactúa con usuarios a través de Telegram y puede responder pregu
 La solución combina múltiples componentes especializados:
 
 ```text
-Telegram
-   ↓
-n8n Workflow
-   ↓
+n8n Chat Interface
+        ↓
+When Chat Message Received
+        ↓
 Agente Inteligente RRHH
    ├── 🧠 Cohere LLM
    ├── 🗄️ PostgreSQL Memory
    ├── 🗃️ MySQL SQL Retrieval
    └── 📚 Base de Conocimiento RAG
-   ↓
-Telegram Response
+        ↓
+Respuesta Conversacional
 ```
 
 ---
@@ -45,7 +45,6 @@ Telegram Response
 | Tecnología | Uso |
 |---|---|
 | ⚙️ n8n | Orquestación y automatización |
-| 💬 Telegram Bot API | Canal conversacional |
 | 🧠 Cohere | Modelo conversacional IA |
 | 🗄️ PostgreSQL | Memoria conversacional |
 | 🗃️ MySQL | Consultas SQL RRHH |
@@ -58,7 +57,6 @@ Telegram Response
 # ✨ Características Principales
 
 - 🤖 Agente IA conversacional
-- 💬 Integración completa con Telegram
 - 🧠 Memoria conversacional persistente
 - 📚 Arquitectura RAG
 - 🗂️ SQL Retrieval dinámico
@@ -76,6 +74,7 @@ chocolatech-hr-ai-agent-Clase02/
 │
 ├── README.md
 ├── .gitignore
+├── .env.example
 │
 ├── docs/
 │   ├── arquitectura-hibrida.md
@@ -85,7 +84,7 @@ chocolatech-hr-ai-agent-Clase02/
 │
 ├── screenshots/
 │   ├── hr-ai-agent-workflow.png
-│   └── Interaccion-Telegram.png
+│   └── interfaz-chat-n8n.png
 │
 └── workflows/
     └── hr-ai-agent-workflow.json
@@ -97,13 +96,7 @@ chocolatech-hr-ai-agent-Clase02/
 
 ## 🔄 Workflow Híbrido en n8n
 
-![Workflow n8n](screenshots/hr-ai-agent-workflow.png)
-
----
-
-## 💬 Interacción Conversacional en Telegram
-
-![Interacción Telegram](screenshots/Interaccion-Telegram.png)
+![Workflow n8n](screenshots/FlujoHibrido.png)
 
 ---
 
@@ -152,6 +145,7 @@ El proyecto utiliza Railway para:
 
 # 🚀 Posibles Mejoras Futuras
 
+- integración con Telegram
 - múltiples agentes IA
 - dashboards administrativos
 - autenticación empresarial
